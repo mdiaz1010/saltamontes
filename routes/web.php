@@ -77,5 +77,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/redirect', 'SocialController@redirect');
-Route::get('/callback', 'SocialController@callback');
+Route::get('/redirectF', 'SocialController@redirectFacebook');
+Route::get('/callbackF', 'SocialController@callbackFacebook');
+Route::get('/redirectT', 'SocialController@redirectTwitter');
+Route::get('/callbackT', 'SocialController@callbackTwitter');
+Route::get('/redirectG', 'SocialController@redirectGoogle');
+Route::get('/callbackG', 'SocialController@callbackGoogle');

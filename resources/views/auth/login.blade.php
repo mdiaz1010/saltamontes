@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="panel-footer text-center">
-                                <a class="btn btn-facebook" href="redirect">
+                                <a class="btn btn-facebook" href="redirectF">
                                     <i class="fa fa-facebook"></i>
                                    Inicia con Facebook
                                 </a>
