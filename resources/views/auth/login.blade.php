@@ -35,6 +35,24 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="panel-footer text-center">
+                                <a class="btn btn-facebook" href="redirect">
+                                    <i class="fa fa-facebook"></i>
+                                   Inicia con Facebook
+                                </a>
+
+                                <a class="btn btn-twitter" href="{{ route('password.request') }}">
+                                    <i class="fa fa-twitter"></i>
+                                   Inicia con Twitter
+                                </a>
+
+                                <a class="btn btn-google" href="{{ route('password.request') }}">
+                                    <i class="fa fa-google"></i>
+                                   Inicia con Google
+                                </a>
+                            </div>
+                        </div>
+
                         {!! Form::close() !!}
 
 @endsection

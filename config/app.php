@@ -179,6 +179,8 @@ return [
         App\Providers\ComposerServiceProvider::class,
         //Añadiendo librerias providers nuevos
         Laracasts\Flash\FlashServiceProvider::class,
+        // Redes sociales
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -228,7 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Flash' => Laracasts\Flash\Flash::class,
-
+        //redes sociales
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];
