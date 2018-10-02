@@ -33,7 +33,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('admin/articles') }}">
+                    <a class="navbar-brand" href="{{ url('') }}">
                        Inicio
                     </a>
                 </div>
@@ -56,12 +56,18 @@
                             <a href="{{ route('register') }}">Registrarse</a>
                         </li>
                         @else
-                        <li><a href="{{ url('admin/articles') }}">Articulos</a></li>
+                    <!-- user-->
+                        <!--
                         <li><a href="{{ url('admin/images') }}">Imágenes</a></li>
+                        -->
                         @if(Auth::user()->admin()==true)
+                    <!-- admin-->
+                        <!--
                         <li><a href="{{ url('admin/categories') }}">Categorias</a></li>
-                        <li><a href="{{ url('admin/users') }}">Usuarios </a></li>
                         <li><a href="{{ url('admin/tags') }}">Tag</a></li>
+                        -->
+                        <li><a href="{{ url('admin/users') }}">Usuarios </a></li>
+                        <li><a href="{{ url('admin/coins_types') }}">Criptomonedas</a></li>
                         @endif
 
 
@@ -91,7 +97,7 @@
         </nav>
         <section>
 
-            <div class="container">
+
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="panel panel-default">
@@ -102,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
         </section>
         @include('admin.templates.partials.footer')
     </div>

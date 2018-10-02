@@ -18,6 +18,12 @@
 </div>
 
 <div class='form-group'>
+    {!! Form::label('wallet','Wallet') !!} {!! Form::hidden('wallet',$users->wallet,['class'=>'form-control','placeholder'=>'Wallet','required'])
+    !!} {!! Form::text('wallet',$users->wallet,['class'=>'form-control','placeholder'=>'Wallet','required']) !!}
+</div>
+
+
+<div class='form-group'>
     {!! Form::submit('Editar',['class'=>'btn btn-primary']) !!}
 </div>
 

@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\User;
-class UserRequest extends FormRequest
+use App\Coin_type;
+class CoinRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,23 +30,19 @@ class UserRequest extends FormRequest
         {
             case 'POST':
                         return [
-                            'name'      => 'required|min:4|max:120',
-                            'email'     => 'min:4|max:250|required|email|unique:users',
-                            'password'  => 'min:4|max:120|required',
-                            'type'      => 'required',
-                            'wallet'    => 'required'
+                            'namecoin'     => 'min:4|max:250|required|namecoin|unique:coins_types',
+                            'soles'  => 'min:4|max:120|required',
+                            'dolares'  => 'min:4|max:120|required',
                         ];
                         break;
             case 'PUT' :
                         return [
-                            'name'      => 'required|min:4|max:120',
-                            'email'     => 'min:4|max:250|required|email|unique:users,email,' . $id,
-                            'type'      => 'required',
-                            'wallet'    => 'required'
+                            'namecoin'     => 'min:4|max:250|required|namnamecoine_coin|unique:coins_types,namecoin,' . $id,
+                            'soles'  => 'min:4|max:120|required',
+                            'dolares'  => 'min:4|max:120|required',
                         ];
                         break;
          }
 
     }
-
 }

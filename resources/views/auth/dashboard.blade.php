@@ -1,5 +1,6 @@
 @extends('layouts.app') @section('title','') @section('content')
-
+<b>Página web automatizada</b>
+<!--
 <h3 class="title-from left">Ultimos articulos</h3>
 <div class="row" class="col-md-12">
     <div class="col-md-9">
@@ -35,5 +36,5 @@
 
 
 </div>
-
+-->
 @endsection

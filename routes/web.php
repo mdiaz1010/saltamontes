@@ -67,6 +67,12 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
         'as'  =>'articlesView'
     ]);
 */
+
+    Route::resource('coins_types','CoinsController');
+    Route::get('coins_types/{id}/destroy',[
+        'uses'=>'CoinsController@destroy',
+        'as'  =>'coins_types.destroy'
+    ]);
 });
 Auth::routes();
 

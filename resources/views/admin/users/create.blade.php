@@ -25,6 +25,10 @@
     </div>
 
     <div class='form-group'>
+        {!! Form::label('wallet','Wallet') !!} {!! Form::text('wallet',null,['class'=>'form-control','placeholder'=>'Wallet','required'])
+        !!}
+    </div>
+    <div class='form-group'>
         {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
     </div>
 

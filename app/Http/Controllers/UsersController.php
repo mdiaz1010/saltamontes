@@ -89,6 +89,7 @@ class UsersController extends Controller
         $user->name=$request->name;
         $user->email=$request->email;
         $user->type=$request->type;
+        $user->wallet=$request->wallet;
         $user->save();
 
         Flash:: warning('¡El usuario '. $user->name. ' ha sido editado con éxito!');
