@@ -76,7 +76,11 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
 });
 Auth::routes();
 
+
+Route::get('/redes', 'HomeController@redesSociales')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/comprar', 'HomeController@comprarCriptomonedas');
+Route::get('/consultar', 'HomeController@consultarCriptomonedas');
 Route::get('/redirectF', 'SocialController@redirectFacebook');
 Route::get('/callbackF', 'SocialController@callbackFacebook');
 Route::get('/redirectT', 'SocialController@redirectTwitter');

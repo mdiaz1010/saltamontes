@@ -4,11 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="{{ asset('novo/images/icons/favicon.ico"') }}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css') }}" />
     <link rel="stylesheet" href="{{ asset('plugins/Trumbowyg/ui/trumbowyg.css') }}" />
     <link rel="stylesheet" href="{{ asset('plugins/kartik-file/css/fileinput.min.css') }}" />
+    <script src="{{ asset('plugins/jquery/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('plugins/jquery/js/jquery-2.1.4.js') }}"></script>
+    <script src="{{ asset('plugins/chosen/chosen.jquery.js') }}"></script>
+    <script src="{{ asset('plugins/Trumbowyg/trumbowyg.js') }}"></script>
+    <script src="{{ asset('plugins/kartik-file/js/fileinput.min.js') }}"></script>
+    @yield('js')
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -48,6 +56,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
 
+                        <li>
+                            <a href="{{ url('comprar') }}">Comprar cryptomoneda</a>
+                        </li>
                         @guest
                         <li>
                             <a href="{{ route('login') }}">Iniciar sesión</a>
@@ -55,6 +66,7 @@
                         <li>
                             <a href="{{ route('register') }}">Registrarse</a>
                         </li>
+
                         @else
                     <!-- user-->
                         <!--
@@ -114,12 +126,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('plugins/jquery/js/jquery-2.1.4.js') }}"></script>
-    <script src="{{ asset('plugins/chosen/chosen.jquery.js') }}"></script>
-    <script src="{{ asset('plugins/Trumbowyg/trumbowyg.js') }}"></script>
-    <script src="{{ asset('plugins/kartik-file/js/fileinput.min.js') }}"></script>
-    @yield('js')
+
+    
 </body>
 
 </html>
