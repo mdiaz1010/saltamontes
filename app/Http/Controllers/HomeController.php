@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Coin_type;
+
+
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -38,11 +41,12 @@ class HomeController extends Controller
         return view('welcome')->with('cripto',$criptomoneda);
     }
 
-    public function consultarCriptomonedas()
+    public function consultarCriptomonedas(Request $request)
     {
-        echo "hola"; die();
-        $id_moneda = Input::get('id_moneda');
-        $criptomoneda= Coin_type::get();
-        return view('welcome')->with('cripto',$criptomoneda);
+        $id_moneda = $request->id_moneda;
+        $moneda= Coin_type::find($id_moneda);
+        $list_valor= array('soles'=>$moneda->soles,'dolares'=>$moneda->dolares);
+
+        echo json_encode($list_valor);
     }
 }

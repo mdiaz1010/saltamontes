@@ -62,7 +62,7 @@
                                    Inicia con Facebook
                                 </a>
 
-                                <a class="btn-login-with bg2 m-b-10" href="{{ route('password.request') }}">
+                                <a class="btn-login-with bg2 m-b-10" href="redirectT">
                                     <i class="fa fa-twitter"></i>
                                    Inicia con Twitter
                                 </a>

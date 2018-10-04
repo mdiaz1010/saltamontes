@@ -54,8 +54,26 @@ class SocialController extends Controller
     public function callbackTwitter()
     {
             $user = Socialite::driver('twitter')->user();
-            dd($user);die();
-            return($user->getId());die();
+            $idsocial= User::where('idsocial',$user->id)->first();
+            if($idsocial){
+                    if(Auth::loginUsingId($idsocial->id)){
+                            return redirect()->route('home');
+                    }
+            }
+            $usuarioRegistro=User::create([
+            'name'              => $user->name,
+            'email'             => $user->email,
+            'password'          => bcrypt('1234'),
+            'idsocial'          => $user->id,
+            'foto_perfil'       => $user->avatar_original,
+            'link_pagina'       => $user->avatar_original,
+            'foto_portada'      => '0',
+        ]);
+        if($usuarioRegistro){
+                if(Auth::loginUsingId($usuarioRegistro->id)){
+                        return redirect()->route('home');
+                }
+        }
     }
 
     public function redirectGoogle()

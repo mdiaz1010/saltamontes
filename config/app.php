@@ -232,6 +232,7 @@ return [
         'Flash' => Laracasts\Flash\Flash::class,
         //redes sociales
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
     ],
 
 ];

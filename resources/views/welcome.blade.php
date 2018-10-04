@@ -15,7 +15,7 @@
         <input type='text' class="form-control" name="cantidad" id='cantidad'>
     </div>
     <div class='form-group'>
-    <button type="button" onclick="btncalcular()" name="btncalcular" id="btncalcular" class="btn btn-primary mb-2"><i class="fa fa-refresh"></i> Calcular</button>
+    <button type="button"  name="btncalcular" id="btncalcular" class="btn btn-primary mb-2"><i class="fa fa-refresh"></i> Calcular</button>
     </div>
     <div id="actualizar">
         <div class='form-group'>
@@ -27,34 +27,37 @@
             <input type='text' class="form-control" name="dolares" id='dolares' readonly>
         </div>
     </div>
-    <input type="text" name="dolarbd" id="dolarbd">
-    <input type="text" name="solesbd" id="solesbd">
-    <input type="text" name="ruta" id="ruta" value="{{ url('consultar') }}">
+
+    <input type="hidden" name="ruta" id="ruta" value="{{ url('consultar') }}">
 </div>
 
 <script>
-        $("#cripto").change(function(){
-            var id_moneda= $(this).val();
+        $("#btncalcular").click(function(){
+            var id_moneda= $("#cripto").val();
             var ruta= $("#ruta").val();
+            var cantidad= $("#cantidad").val();
             $.ajax({
                 url:ruta,
                 data:{id_moneda:id_moneda},
                 type:'POST',
-                contentType: 'application/json; charset=utf-8',
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
                 dataType: "json",
                 success: function(data){
-                    $("#solesbd").val(data.soles);
-                    $("#dolarbd").val(data.dolares);
+
+                    if(parseInt((data.dolares)*cantidad)<50){
+                    $("#soles").val("La cantidad ingresada es menor a la permitida");
+                    $("#dolares").val("La cantidad ingresada es menor a la permitida");
+                    return true;
+                    }
+                    $("#soles").val("S/."+(Math.round(data.soles*cantidad*100)/100));
+                    $("#dolares").val("$ "+(Math.round(data.dolares*cantidad*100)/100));
 
                 }
 
 
         });
         });
-        $("#btncalcular").click(function(){
-            var soles= $("#solesbd"+$(this).val());
-            alert(soles); return true;
-        });
+
 
 
 </script>
