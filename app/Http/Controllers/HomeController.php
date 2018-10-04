@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Coin_type;
-
+use Srmklive\PayPal\Services\ExpressCheckout;
 
 class HomeController extends Controller
 {
@@ -48,5 +48,43 @@ class HomeController extends Controller
         $list_valor= array('soles'=>$moneda->soles,'dolares'=>$moneda->dolares);
 
         echo json_encode($list_valor);
+    }
+
+    public function payWithPaypal()
+    {
+
+        $provider = new ExpressCheckout;
+                $data = [];
+                $data['items'] = [
+                    [
+                        'name' => 'Product 1',
+                        'price' => 9.99,
+                        'qty' => 1
+                    ]
+                ];
+
+                $data['invoice_id'] = 1;
+                $data['invoice_description'] = "Order #{$data['invoice_id']} Invoice";
+                $data['return_url'] = url('paypal-success');
+                $data['cancel_url'] = url('/cart');
+
+                $total = 0;
+                foreach($data['items'] as $item) {
+                    $total += $item['price']*$item['qty'];
+                }
+
+                $data['total'] = $total;
+                $response= $provider->setExpressCheckout($data);
+
+                return redirect($response['paypal_link']);
+    }
+
+    public function paypalSuccess(Request $request)
+    {
+        $provider = new ExpressCheckout;
+        $token= $request->token;
+        $prayerId= $request->prayerId;
+        $response = $provider->getExpressCheckoutDetails($token);
+        dd($response);
     }
 }

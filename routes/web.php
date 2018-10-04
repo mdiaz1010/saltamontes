@@ -87,3 +87,5 @@ Route::get('/redirectT', 'SocialController@redirectTwitter');
 Route::get('/callbackT', 'SocialController@callbackTwitter');
 Route::get('/redirectG', 'SocialController@redirectGoogle');
 Route::get('/callbackG', 'SocialController@callbackGoogle');
+Route::get('/pay-with-paypal', 'HomeController@payWithPaypal')->name('payment.paypal');
+Route::get('/paypal-success', 'HomeController@paypalSuccess')->name('payment.paypalSuccess');

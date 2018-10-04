@@ -181,6 +181,9 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         // Redes sociales
         Laravel\Socialite\SocialiteServiceProvider::class,
+
+        //paypal
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class
     ],
 
     /*
@@ -233,6 +236,8 @@ return [
         //redes sociales
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Input' => Illuminate\Support\Facades\Input::class,
+        //paypal
+        'PayPal' => Srmklive\PayPal\Facades\PayPal::class
     ],
 
 ];
