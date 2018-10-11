@@ -1,0 +1,21 @@
+#btc_magazine{
+	padding-top: 30px;
+}
+
+.tab_link{
+	color: #5a5555;
+}
+
+.tab_link > a, a:hover, a:focus{
+	color: #5a5555;
+}
+
+a.tab_pestana:hover{
+	font-weight: bold;
+}
+
+li.active > a.tab_link{
+    color: #000;
+    background-color: #ffbf61;
+    border: none;
+}

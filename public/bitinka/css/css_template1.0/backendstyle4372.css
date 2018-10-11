@@ -1,0 +1,773 @@
+/*@cvargas*/
+.backend-load{
+	position: relative;
+	z-index: 1000;
+	margin-top: 20%;
+}
+
+/*@cvargas*/
+.padding-form{
+	padding-top: 30px;
+}
+
+
+.group-table{
+    display: table;
+}
+
+/*@vtumialan*/
+.img-pagina-confirmacion{
+    max-width: 60% !important;
+}
+
+/* @rfernandez -support */
+#div_reason #accordion_reason,
+#div_reason #accordion_reason .panel-default,
+#div_reason #accordion_reason .panel-default .panel-body {
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+#div_reason #accordion_reason .panel-default {
+    padding-bottom: 3px;
+}
+
+.fg-support .error{
+	display: block;
+   	color:#CC0000;
+}
+
+.banderas-support {
+    margin-top: auto;
+  }
+
+  .btn-support-send {
+    margin: 0 auto;
+    width: 150px;
+  }
+
+  .btn-support {
+    margin: 0 auto;
+    max-width: 250px;
+  }
+
+  .frm-support {
+       margin-bottom: 0px;
+  }
+
+  .frm-answer {
+       margin-bottom: 15px;
+  }
+
+  .panel-group .mn-0 {
+      margin-bottom: 15px;
+  }
+
+  .pg-support {
+      margin-bottom: 0px;
+  }
+
+  #lbl_recaptcha {
+    font-size: 14px;
+  }
+
+.banderas-support img {
+    margin-bottom: 10px;
+}
+
+.banderas-support .box-coin-check {
+    position: relative;
+}
+
+.banderas-support .box-coin-check i {
+    position: absolute;
+    bottom: 3px;
+    color: #ffbf61;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#pais .li-pais {
+    width: 20%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+
+#div_captcha {
+  padding-top: 15px;
+ }
+  /* fin no support*/
+
+/**
+ * Trading
+ */
+.container-panel-bt {
+  border: 1px solid #e1e1e1;
+  margin-bottom: 30px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.panel-bt {
+
+}
+.panel-bt-1 {
+  background-color: #f3f3f3;
+}
+.panel-bt-2 {
+  background-color: #fff;
+}
+.list-group-trading {
+  overflow-y: auto;
+  height: 531px;
+  margin-top: 10px;
+}
+
+.container-trading {
+  padding: 10px 5px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+.container-trading-title {
+  padding: 10px 0px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.container-trading-title > h4 {
+  font-size: 13px;
+  font-weight: bold;
+}
+.container-trading-title > span {
+  font-size: 12px;
+  font-weight: normal;
+}
+.container-trading-values {
+  font-weight: bold;
+  color: #777;
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 4px;
+}
+.container-trading-values > p {
+  margin: 0px;
+  font-size: 12px;
+}
+.trading-empty {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.option-selected-bt, .option-selected-bt-tc {
+  padding: 5px 2px;
+}
+
+.option-selected-bt-active {
+  padding-top: 5px;
+  padding-bottom: 1px;
+}
+
+.container-trading-info-head-empty {
+  height: 450px;
+  margin: 20px;
+  position: relative;
+  resize: vertical;
+}
+
+
+
+.container-trading-info-head {
+  margin-top: 30px;
+}
+.btn-fund-trading {
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  border: 1px solid #777;
+}
+.container-trading-info-head > h3 {
+  width: 132px;
+  border-style: solid;
+  border-color: #fff #fff #777 #fff;
+}
+.trading-grandtotal {
+  border: 1px solid #777;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  padding: 14px;
+}
+.trading-grandtotal > div {
+  border: 1px solid #777;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  padding-top: 60px;
+  font-size: 17px;
+}
+.trading-extra {
+  padding: 0px 0px;
+}
+
+
+.container-trading-transaction {
+  padding: 6px 14px;
+  background-color: #fff;
+  border: 1px solid #777;
+  border-radius: 3px;
+  margin: 14px 0px;
+  color: #777;
+}
+.container-trading-transaction-title {
+  font-weight: bold;
+  padding-left: 15px;
+}
+.container-trading-transaction-title > label {
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.container-trading-transaction-title > h4 {
+  font-weight: bold;
+  font-size: 14px;
+}
+.container-trading-transaction-values {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 2px;
+}
+.container-trading-transaction-values > label {
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.container-trading-transaction-values > h4 {
+  font-weight: normal;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.center {
+  margin: auto;
+}
+
+.center-tabs {
+  margin: auto;
+  width: 380px;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.text-center {
+  text-align: center;
+}
+/* Asociar TDC*/
+#tarjeta_form .cam-tdc {
+  padding-left:28px;
+}
+#tarjeta_form .format{
+    padding:5px;
+}
+
+#tarjeta_form .attach-tdc
+{
+    padding-top:6px;
+}
+/* fin Asociar TDC*/
+
+.transfer-modal-title {
+  width: 180px;
+  border-style: solid;
+  border-color: #fff #fff #777 #fff;
+}
+.transfer-modal-body {
+  margin: 12px 30px 30px 30px;
+  padding: 24px 30px;
+  border: 1px solid #777;
+}
+
+.btn-transfer-default {
+  color: #fff;
+  background-color: #777;
+}
+.btn-transfer-default:hover {
+  color: #fff;
+  background-color: #777;
+}
+.btn-transfer-modal {
+  border: none;
+}
+.btn-close-modal {
+  position: relative;
+  left: -15px;
+}
+
+.transfer-modal-ft {
+  font-weight: bold;
+  font-size: 11px;
+  color: #777;
+}
+.transfer-modal-ft-confirm {
+  font-size: 16px;
+  font-weight: bold;
+  color: #777;
+}
+.none {
+  display: none;
+}
+.text-poweredby {
+  font-style: italic;
+  font-weight: bold;
+  color: #777;
+  font-size: 13px;
+}
+.dropdown-menu-currencies {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  overflow-y: auto;
+}
+.tmc-name {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.list-group-detail-transfer {
+  height: 234px;
+  overflow-y: auto;
+  padding: 0px 5px;
+}
+
+.details-coin-transfer {
+  width: 390px;margin: 0px auto;
+}
+
+.nav-wallet .nav-tabs {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border-radius: 3px !important;
+}
+
+.nav-wallet .nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #000;
+  background-color: #ffbf61;
+}
+
+.nav-wallet .nav-tabs > li {
+  margin-bottom: 0px;
+}
+
+.nav-wallet .nav-tabs > li > a {
+  border: 1px solid #ddd;
+  color: #494949;
+  background: #fff;
+  padding: 6px 35px;
+  border-radius: 0px;
+  margin-right: 0px;
+}
+
+.title-modal-transfer {
+  margin-top: 0px;
+  color: #777;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.first-option-default {
+  float: left;
+  padding-left: 14px;
+  padding-top: 7px;
+  text-transform: none !important;
+}
+.last-option-default {
+  padding-right: 14px !important;
+}
+
+.option-bt label:first-child, .option-bt-tc label:first-child {
+  float: left;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.option-bt label:last-child,
+.option-selected-bt label:last-child,
+.option-bt-tc label:last-child,
+.option-selected-bt-tc label:last-child {
+  float: right;padding-top: 10px;
+  color: #777;
+}
+.transfer-modal-confirm > h3 {
+  color: #777;
+  font-weight: bold;
+}
+.start-another-transfer, .reload {
+  cursor: pointer;
+}
+.transfer-modal-register > h3 {
+  color: #777;
+  font-weight: bold;
+  font-size: 17px;
+}
+.text-gray {
+  color: #777;
+}
+.container-platform-send {
+  padding: 0px 0px 0px 15px;
+}
+.container-platform-received {
+  padding: 0px;
+}
+
+.container-platform-send .media-body {
+  font-size: 10px;
+}
+
+.container-platform-received .media-body {
+  font-size: 10px;
+}
+.action-modal-body-action {
+  margin: 30px;
+  padding: 30px;
+  border: 1px solid #777;
+}
+.option-bt-balance {
+  float: right;
+  padding-top: 5px;
+  font-size: 13px;
+  padding-right: 5px;
+}
+
+.option-bt-action label:first-child {
+  float: left;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.upcase-text {
+  text-transform: uppercase;
+}
+
+.container-input-search-currency {
+  padding: 0px 45px;
+}
+
+.option-selected-bt label:first-child, .option-selected-bt-tc label:first-child {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.select-all-amount {
+  cursor: pointer;
+}
+.loading-bg {
+  background-color: red;
+  width: 160px;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+}
+.container-powered-by-in-modal {
+  margin-top: -25px;
+}
+
+.dropdown-menu-currencies .trading-empty {
+  padding: 3px;
+  font-size: 14px;
+}
+
+.search {
+  position: relative;
+  color: #aaa;
+  font-size: 16px;
+}
+.search input {
+  height: 32px;
+  background: #fcfcfc;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+}
+.search input {
+  text-indent: 22px;
+}
+.search .fa-search {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+
+.address-crypto {
+  background-color: #e6e6e6;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  width: 100%;
+}
+.tooltip-add {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #ccc;
+}
+
+.tooltip-add .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    width: 100px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+
+.tooltip-add:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.tooltip-add-top {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  cursor: pointer;
+}
+
+/* Asociar TDC*/
+#tarjeta_form .cam-tdc {
+  padding-left:28px;
+}
+#tarjeta_form .format{
+    padding:5px;
+}
+
+#tarjeta_form .attach-tdc
+{
+    padding-top:6px;
+}
+/* fin Asociar TDC*/
+
+
+.tooltip-add-top::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.info-add-copied {
+  margin-top: 10px;
+}
+
+.no-balance-currency {
+  font-size: 16px;
+  text-align: justify;
+  margin-top: 12px;
+}
+
+.container-amount-selected > span {
+  cursor: pointer;
+}
+.container-amount-selected i {
+  font-size: 12px;
+}
+.transfer-modal-loading {
+  padding: 84px 0px;
+}
+.action-modal-loading {
+  padding: 94px 0px;
+}
+.jumping-modal-loading {
+  padding: 64px 0px;
+}
+.col-qr-crypto {
+  padding-right: 6px;
+}
+
+.container-canvas-transfer {
+  width: 151px;
+  height: 148px;
+  margin: 0px auto;
+}
+
+.container-coin-per {
+  padding-right: 0px;
+}
+
+.internal-coin-per {
+  padding: 16px 24px;
+}
+
+.head-coin-per {
+  margin-bottom: 8px;
+  margin-left: -8px;
+}
+
+.head-coin-per span, .amount-usd-balance-profile, .container-trading-info-body label {
+  color: #868686;
+}
+.body-coin-per {
+  margin-left: -8px;
+}
+.amount-btc-balance-profie {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.coin-btn-balance-profile {
+  font-size: 13px;
+  color: #868686;
+}
+.option-type-currency {
+  cursor: pointer;
+}
+.option-selected-bt-tc {
+  margin-bottom: 10px;
+}
+
+.modal {
+}
+.vertical-alignment-helper {
+  display:table;
+  height: 100%;
+  width: 100%;
+}
+.vertical-align-center {
+  /* To center vertically */
+  display: table-cell;
+  vertical-align: middle;
+}
+.modal-content {
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width:inherit;
+  height:inherit;
+  /* To center horizontally */
+  margin: 0 auto;
+}
+
+.value-currency-per {
+  margin-bottom: 6px;
+  padding: 0px 8px;
+}
+.container-detail-currency-per {
+  float: left;
+}
+.pointer {
+  cursor: pointer;
+}
+.txt-address {
+  border: none;
+  background-color: #e6e6e6;
+  width: 100%;
+  text-align: center;
+}
+
+#text-notification-modal {
+  font-size: 16px;
+  text-align: justify;
+}
+
+.wallet-landing {
+  margin-top: 14px;
+}
+
+/*--------------------------------@MEDIA QUERIES-------------------------------------------------------*/
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 990px) {
+  
+}
+@media (min-width: 768px) {
+  .container-trading-info-head-empty > div {
+    position: absolute;
+    top: 46%;
+    left: 20px;
+    right: 20px;
+    margin-top: -70px;
+    padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .container-trading-info-head-empty > div{
+    padding: 0
+  }
+  .container-trading-info-head-empty{
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-wt, #tab-wallet-inkapay, .tab-wt-all, .tab-wt-crypto, .tab-wt-fiat, .details-coin-transfer, .btn-group .upcase-text {
+    width: 100%;
+  }
+  .container-input-search-currency {
+    padding: 0px;
+  }
+  .transfer-modal-register .col-sm-2 {
+    display: none;
+  }
+  .transfer-modal-register .container-platform-received {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .option-selected-bt label:first-child, .option-selected-bt-tc label:first-child {
+    font-size: 11px;
+  }
+  .transfer-modal-body {
+    padding: 18px 16px;
+  }
+  .container-trading-transaction-title {
+    padding-left: 0px;
+  }
+  .container-detail-currency-per {
+    float: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-ts {
+    width: 420px;
+  }
+  .container-detail-currency-per {
+    float: left;
+  }
+}
+
+
+.imgSvg{
+  width: 52px;
+}
+.imgSvgRedondas{
+  width: 50px;
+}
+
+.msjBroker {
+ position: absolute;
+ top: 42%;
+ left: 21%;
+}

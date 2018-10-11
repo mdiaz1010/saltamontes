@@ -127,6 +127,6 @@
             $("#pasarela-pago").show();
         });
 
-     
+
 </script>
 @endsection

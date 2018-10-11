@@ -1,8 +1,6 @@
-@extends('layouts.app') @section('title','Listar Usuarios') @section('content')
+@extends('layouts.app') @section('title','Lista de usuarios') @section('content')
 
-
-<a href="{{ route('users.create') }}" class="btn btn-info">Registrar nuevo Usuario</a>
-<hr>
+  <a href="{{ route('users.create') }}" class="btn btn-info">Registrar nuevo Usuario</a>
 <table class="table table-dark">
     <thead>
         <tr>
@@ -38,10 +36,11 @@
         @endforeach
     </tbody>
 </table>
-
+                </div>
+            </div>
+        </div>
 <div class="text-center">
     {!! $users->render() !!}
 </div>
-
-
+   
 @endsection

@@ -80,6 +80,13 @@ Auth::routes();
 Route::get('/redes', 'HomeController@redesSociales')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/comprar', 'HomeController@comprarCriptomonedas');
+
+Route::get('/noticias', function () {
+    return view('noticias');
+});
+Route::get('/preguntas', function () {
+    return view('preguntas');
+});
 Route::post('/consultar', 'HomeController@consultarCriptomonedas');
 Route::get('/redirectF', 'SocialController@redirectFacebook');
 Route::get('/callbackF', 'SocialController@callbackFacebook');
@@ -89,3 +96,4 @@ Route::get('/redirectG', 'SocialController@redirectGoogle');
 Route::get('/callbackG', 'SocialController@callbackGoogle');
 Route::get('/pay-with-paypal', 'HomeController@payWithPaypal')->name('payment.paypal');
 Route::get('/paypal-success', 'HomeController@paypalSuccess')->name('payment.paypalSuccess');
+

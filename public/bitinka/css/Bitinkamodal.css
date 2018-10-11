@@ -1,0 +1,674 @@
+.bitinkainfo, .bitinkasuccess, .bitinkawarning, .bitinkaerror, .bitinkavalidation, .bitinkregister {
+    border : 1px solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    min-height: 80px;
+    font-size: 1.3em;
+	overflow: hidden;
+    display: table;
+}
+
+.bitinkainfo.alert, .bitinkasuccess.alert, .bitinkawarning.alert, .bitinkaerror.alert, .bitinkavalidation.alert, .bitinkaregister.alert 
+ {
+    padding: 0px 10px 0px 10px !important;
+    margin-bottom: 20px;
+    color: #c09853;
+    text-shadow: none !important;
+    border: none;
+    border-radius: 0px !important;
+	min-height: 80px;
+	display: grid;
+}
+
+.alert-dismissable .close, .alert-dismissible .close {
+    right: 5px;
+    opacity: 1;
+    text-shadow: none;
+}
+
+.bitinkainfo.alert {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url(%27info.html);
+}
+.bitinkasuccess.alert, .bitinkaregister.alert {
+    color: #2C4D0A;
+    background-color: #9DD244;
+    background-image:url(%27success.html);
+}
+.bitinkawarning.alert {
+    color: #9F6000;
+    background-color: #F3D467;
+    background-image: url(%27warning.html);
+}
+.bitinkaerror.alert {
+    color: #6C0309;
+    background-color: #DE4444 /*#FFBABA*/;
+    background-image: url(%27error.html);
+}
+
+div.bitinkamodal{
+    background: #f2f2f2;
+    border: none;
+    border-radius: 0;
+}
+div.bitinkamodal, div.bitinkamodal div.botonesmodal div{
+    font-family: 'Open Sans', sans-serif, ' Liberation Sans';
+}
+
+div.bitinkamodal div.modal-header, div.bitinkamodal div.modal-footer{
+    background: #ffbf61;
+    height: 1.5em;
+    padding: 0em;
+    border: none;
+}
+
+
+div.bitinkamodal div.modal-body{
+    color: #666666;
+    font-size: 14px;
+    padding: 1em;
+    max-height: none;
+}
+div.bitinkamodal div.modal-body p{
+    font-size: 1em;
+}
+div.bitinkamodal div.modal-body strong.center{
+    text-align: center;
+    margin: 0em;
+    padding: 0;
+    display: block;
+}
+div.bitinkamodal div.modal-body p.text-justify{
+    text-align: justify;
+}
+
+div.bitinkamodal .modal-header .close{
+    margin: 0;
+    margin-right: 0.2em;
+}
+
+img.img-modal {
+margin: 0;
+margin-top: -0.5em;
+}
+
+#notefeo img.img-modal{
+    margin: 0px 0 0 -10px;
+}
+.bitinkamodal img.img-modal{
+    width: 45px;
+    margin: 0.7em 0;
+}
+.bitinkainfo, .bitinkasuccess, .bitinkawarning, .bitinkaerror, .bitinkavalidation {
+    border : 1px solid;
+    margin: 10px 0px;
+    padding: 1em;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    font-size: 1.3em;
+}
+.bitinkainfo {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url(%27info.html);
+}
+.bitinkasuccess {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url(%27success.html);
+	min-height: 66px;
+}
+.bitinkasuccess img{
+max-width: 45px;    
+}
+.bitinkawarning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url(%27warning.html);
+}
+.bitinkaerror {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url(%27error.html);
+}
+
+div.bitinkamodal div.botonesmodal{
+    margin: 2em 0 0 0;
+    text-align: center;
+}
+
+div.bitinkamodal div.botonesmodal div.btn{
+    font-weight: bold;
+    width: 4.5em;
+}
+div.bitinkamodal div.botonesmodal.modal2 div.btn{
+    font-weight: bold;
+    width: auto !important;
+}
+
+div.bitinkamodal .modal-content {
+    border-radius: 0px;
+}
+
+/*-------------------------Notify animation----------------------------*/
+
+.swal2-icon.swal2-success .swal2-success-ring {
+    border: 4px solid #a5dc86 !important;
+}
+
+.swal2-modal .swal2-styled {
+    font-weight: bold !important;
+}
+
+.bitinkaerror .swal2-icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto 10px;
+    background: transparent !important;
+}
+
+.bitinkaerror .swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+    width: 28px;
+    top: 23px;
+}
+
+.bitinkaerror .swal2-icon.swal2-error [class^="swal2-x-mark-line"][class$="left"] {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 11px;
+}
+
+.bitinkaerror .swal2-icon.swal2-error [class^="swal2-x-mark-line"][class$="right"] {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 12px;
+}
+
+.bitinkainfo,
+.bitinkasuccess,
+.bitinkawarning,
+.bitinkaerror,
+.bitinkavalidation,
+.bitinkaregister {
+    box-shadow: 5px 4px 5px #292929;
+}
+
+.bitinkasuccess .sa,
+.bitinkaregister .sa {
+    width: 60px;
+    height: 69px;
+    padding: 0px;
+    background-color: transparent;
+    margin: 0 auto;
+    -webkit-transition-delay: 3s;
+    transition-delay: 3s;
+}
+
+.bitinkasuccess .sa-success,
+.bitinkaregister .sa-success {
+    border-radius: 50%;
+    border: 4px solid #A5DC86;
+    box-sizing: content-box;
+    height: 50px;
+    padding: 0;
+    position: relative;
+    background-color: #7db129;
+    width: 50px;
+    margin-top: 10px;
+}
+
+.bitinkasuccess .sa-success-placeholder,
+.bitinkaregister .sa-success-placeholder {
+    border-radius: 50%;
+    border: 4px solid rgba(165, 220, 134, 0.25);
+    box-sizing: content-box;
+    height: 50px;
+    left: -4px;
+    position: absolute;
+    top: -4px;
+    width: 50px;
+    z-index: 2;
+}
+
+.bitinkasuccess .sa-success-tip,
+.bitinkasuccess .sa-success-long,
+.bitinkaregister .sa-success-tip,
+.bitinkaregister .sa-success-long {
+    background-color: #A5DC86;
+    border-radius: 2px;
+    height: 5px;
+    position: absolute;
+    z-index: 2;
+}
+
+.bitinkasuccess .sa-success-tip,
+.bitinkaregister .sa-success-tip {
+    left: 7px;
+    top: 30px;
+    transform: rotate(45deg);
+    width: 15px;
+}
+
+.bitinkasuccess .sa-success-long,
+.bitinkaregister .sa-success-long {
+    right: 5px;
+    top: 23px;
+    transform: rotate(-45deg);
+    width: 33px;
+}
+
+.bitinkawarning .f-modal-icon {
+    border-radius: 50%;
+    border: 4px solid gray;
+    box-sizing: content-box;
+    height: 50px;
+    margin: 10px auto;
+    padding: 0;
+    position: relative;
+    width: 50px;
+}
+
+.bitinkawarning .f-modal-icon.f-modal-warning {
+    border-color: #F9AD3D;
+}
+
+.bitinkawarning .f-modal-icon.f-modal-warning:before {
+    -webkit-animation: pulseWarning 2s linear infinite;
+    animation: pulseWarning 2s linear infinite;
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+}
+
+.bitinkawarning .f-modal-icon.f-modal-warning:after {
+    background-color: transparent;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.bitinkawarning .f-modal-icon.f-modal-warning .f-modal-body {
+    background-color: #F9AD3D;
+    border-radius: 0px;
+    height: 20px;
+    left: 50%;
+    margin-left: -2px;
+    position: absolute;
+    top: 10px;
+    width: 5px;
+    z-index: 2;
+}
+
+.bitinkawarning .f-modal-icon.f-modal-warning .f-modal-dot {
+    background-color: #F9AD3D;
+    border-radius: 50%;
+    bottom: 10px;
+    height: 7px;
+    left: 50%;
+    margin-left: -3px;
+    position: absolute;
+    width: 7px;
+    z-index: 2;
+}
+
+.bitinkawarning .f-modal-icon + .f-modal-icon {
+    margin-top: 50px;
+}
+
+.scaleWarning {
+    -webkit-animation: scaleWarning 0.75s infinite alternate;
+    animation: scaleWarning 0.75s infinite alternate;
+}
+
+.pulseWarningIns {
+    -webkit-animation: pulseWarningIns 0.75s infinite alternate;
+    animation: pulseWarningIns 0.75s infinite alternate;
+}
+
+@-webkit-keyframes scaleWarning {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    30% {
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleWarning {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    30% {
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes pulseWarning {
+    0% {
+        background-color: transparent;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    30% {
+        background-color: transparent;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        background-color: #fff;
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes pulseWarning {
+    0% {
+        background-color: transparent;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    30% {
+        background-color: transparent;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        background-color: #fff;
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes pulseWarningIns {
+    0% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+@keyframes pulseWarningIns {
+    0% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+
+
+.bitinkainfo .f-modal-icon {
+    border-radius: 50%;
+    border: 4px solid gray;
+    box-sizing: content-box;
+    height: 52px;
+    margin: 10px auto;
+    padding: 0;
+    position: relative;
+    width: 50px;
+}
+
+.bitinkainfo .f-modal-icon.f-modal-info {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.bitinkainfo .f-modal-icon.f-modal-info:before {
+    -webkit-animation: pulseWarning 2s linear infinite;
+    animation: pulseWarning 2s linear infinite;
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+}
+
+.bitinkainfo .f-modal-icon.f-modal-info:after {
+    background-color: transparent;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.bitinkainfo .f-modal-icon.f-modal-info .f-modal-body {
+    background-color: #F9AD3D;
+    border-radius: 0px;
+    height: 20px;
+    left: 50%;
+    margin-left: -2px;
+    position: absolute;
+    bottom: 10px;
+    width: 5px;
+    z-index: 2;
+}
+
+.bitinkainfo .f-modal-icon.f-modal-info .f-modal-dot {
+    background-color: #F9AD3D;
+    border-radius: 50%;
+    top: 10px;
+    height: 7px;
+    left: 50%;
+    margin-left: -3px;
+    position: absolute;
+    width: 7px;
+    z-index: 2;
+}
+
+.bitinkainfo .f-modal-icon + .f-modal-icon {
+    margin-top: 50px;
+}
+
+.scaleInfo {
+    -webkit-animation: scaleInfo 0.75s infinite alternate;
+    animation: scaleInfo 0.75s infinite alternate;
+}
+
+.pulseInfoIns {
+    -webkit-animation: pulseInfoIns 0.75s infinite alternate;
+    animation: pulseInfoIns 0.75s infinite alternate;
+}
+
+@-webkit-keyframes scaleInfo {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    30% {
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleInfo {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    30% {
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes pulseInfo {
+    0% {
+        background-color: transparent;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    30% {
+        background-color: transparent;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.2);
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes pulseInfo {
+    0% {
+        background-color: transparent;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    30% {
+        background-color: transparent;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.2);
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes pulseInfoIns {
+    0% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes pulseInfoIns {
+    0% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+/*.wallet-landing .col-sm-2:nth-child(2) div, .wallet-landing .col-sm-8:last-child div {*/
+
+/*---------------------------------notify animation fin------------------------------------*/
+
+
+.tabla {
+
+display: table;
+width: 100%;
+}
+
+.fila {
+
+display: table-row;
+}
+
+.cel1 {
+
+font-weight: bold;
+display: table-cell;
+text-align: right;
+width: 50%;
+padding: 1px 6px;
+}
+
+.cel2 {
+
+display: table-cell;
+text-align: left;
+width: 50%;
+padding: 1px 6px;
+}
+
+
+.cuadro_especial{
+
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
+
+
+@media (max-width: 767px) {
+.cell1, .cell2 {
+width: 100%;
+}
+}
+
+.bitinkaerror .col-xs-4 {
+    background: #D8000C;
+    padding-bottom: 2px;
+    height: 100%;
+    min-width: 85px;
+}
+
+.bitinkasuccess .col-xs-4 {
+    background: #7db129;
+    padding-bottom: 1px;
+    height: 100%;
+    min-width: 85px;
+}
+
+.bitinkawarning .col-xs-4 {
+    background: #ffbf61;
+    padding-bottom: 2px;
+    height: 100%;
+    min-width: 85px;
+}
+
+.bitinkainfo .col-xs-4 {
+    background: #00529B;
+    height: 100%;
+    min-width: 85px;
+}

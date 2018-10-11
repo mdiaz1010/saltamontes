@@ -41,6 +41,10 @@ class HomeController extends Controller
         return view('welcome')->with('cripto',$criptomoneda);
     }
 
+    public function noticiasCriptomonedas(){
+        return view('noticias');
+    }
+
     public function consultarCriptomonedas(Request $request)
     {
         $id_moneda = $request->id_moneda;
