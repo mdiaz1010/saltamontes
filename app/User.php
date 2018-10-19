@@ -31,6 +31,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Article');
     }
+    public function vouchers()
+    {
+        return $this->hasMany('App\Voucher');
+    }
     public function admin()
     {
         return $this->type==='admin';

@@ -4,8 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Coin_type;
+use App\User;
+use App\Voucher;
+use Laracasts\Flash\Flash;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Srmklive\PayPal\Services\ExpressCheckout;
+use App\Http\Requests\MemberRequest;
+use Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 
+use Mail;
 class HomeController extends Controller
 {
 
@@ -37,8 +45,14 @@ class HomeController extends Controller
 
     public function comprarCriptomonedas()
     {
+        $value = Auth::user();
+        if(empty($value['wallet'])){
+            $values=array('readonly'=>'','valor'=>'');
+        }else{
+            $values=array('readonly'=>'readonly','valor'=>$value['wallet']);
+        }
         $criptomoneda= Coin_type::get();
-        return view('welcome')->with('cripto',$criptomoneda);
+        return view('welcome')->with('cripto',$criptomoneda)->with('wallet',$values);;
     }
 
     public function noticiasCriptomonedas(){
@@ -54,23 +68,31 @@ class HomeController extends Controller
         echo json_encode($list_valor);
     }
 
-    public function payWithPaypal()
+    public function payWithPaypal($dolar,$moneda,$cantidad)
     {
 
-        $provider = new ExpressCheckout;
-                $data = [];
-                $data['items'] = [
-                    [
-                        'name' => 'Product 1',
-                        'price' => 9.99,
-                        'qty' => 1
-                    ]
-                ];
+        Cart::add(['id' => $cantidad, 'name' => $moneda, 'qty' => 1, 'price' => $dolar]);
+        $cantidad_facturas=Voucher::count();
 
-                $data['invoice_id'] = 1;
-                $data['invoice_description'] = "Order #{$data['invoice_id']} Invoice";
+        $provider = new ExpressCheckout;
+        $data = [];
+        $data['items'] = [
+            [
+                'name' =>  $cantidad.' de '.$moneda,
+                'price' => $dolar,
+                'qty' => 1
+                ]
+            ];
+            if($cantidad_facturas==0){
+                 $invoice=1;
+                 $data['invoice_id'] = $invoice;
+             }else{
+                 $invoice = Voucher::where('id', '=', $cantidad_facturas)->get();
+                 $data['invoice_id'] = (int)$invoice[0]['contabilizador_paypal']+1;
+             }
+                $data['invoice_description'] = "Orden #{$data['invoice_id']} Comprobante";
                 $data['return_url'] = url('paypal-success');
-                $data['cancel_url'] = url('/cart');
+                $data['cancel_url'] = url('/home');
 
                 $total = 0;
                 foreach($data['items'] as $item) {
@@ -80,15 +102,97 @@ class HomeController extends Controller
                 $data['total'] = $total;
                 $response= $provider->setExpressCheckout($data);
 
+
                 return redirect($response['paypal_link']);
     }
+    public function editarDatos($id)
+    {
+        $user= User::find($id);
+        return view('editar')->with('users',$user);
+    }
+    public function cambiar(MemberRequest $request,$id){
 
+        $user= User::find($id);
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=bcrypt($request->password);
+        $user->wallet=$request->wallet;
+        $user->save();
+
+        Flash:: warning('¡El usuario '. $user->name. ' ha sido editado con éxito!');
+        return view('home');
+    }
     public function paypalSuccess(Request $request)
     {
-        $provider = new ExpressCheckout;
-        $token= $request->token;
-        $prayerId= $request->prayerId;
-        $response = $provider->getExpressCheckoutDetails($token);
-        dd($response);
+        $total =0;
+        $cantidad_facturas=Voucher::count();
+        foreach(Cart::content() as $key => $value){
+            $data['items'][] = [
+                'name'=>$value->id.' de '.$value->name,
+                'price'=>$value->price,
+                'qty'=>1
+            ];
+            $canti= $value->id;
+
+        }
+
+        if($cantidad_facturas==0){
+            $invoice=1;
+            $data['invoice_id'] = $invoice;
+        }else{
+            $invoice = Voucher::where('id', '=', $cantidad_facturas)->get();
+            $data['invoice_id'] = $invoice[0]['contabilizador_paypal']+1;
+        }
+                $total = $data['items'][0]['price'];
+                $data['total'] = $total;
+                $data['invoice_description'] = "Orden #{$data['invoice_id']} Comprobante";
+                $provider = new ExpressCheckout;
+                $token= $request->token;
+                $prayerId= $request->PayerID;
+                $response = $provider->getExpressCheckoutDetails($token);
+                $response = $provider->doExpressCheckoutPayment($data,$token,$prayerId);
+                $value = Auth::user();
+
+                if(empty($value['email'])){
+                    $correo=$response['PAYMENTINFO_0_SELLERPAYPALACCOUNTID'];
+                }else{
+                    $correo=$value['email'];
+                }
+                $list_facturas = array(
+                    'user_id'=>$value['id'],
+                    'monto_bruto'=>$response['PAYMENTINFO_0_AMT'],
+                    'monto_neto'=>round($response['PAYMENTINFO_0_AMT']*0.82,2)-$response['PAYMENTINFO_0_FEEAMT'],
+                    'p_pago'=>'PAYPAL',
+                    'desc_pago'=>$response['PAYMENTINFO_0_FEEAMT'],
+                    'cant_cripto'=>$canti,
+                    'tipo_cripto'=>$data['items'][0]['name'],
+                    'nume_boleta'=>'B00-00'.$data['invoice_id'],
+                    'igv'=>$response['PAYMENTINFO_0_AMT']*0.18,
+                    'token'=>$response['TOKEN'],
+                    'correo'=>$correo,
+                    'fecha_emision'=>$response['PAYMENTINFO_0_ORDERTIME'],
+                    'completed'=>$response['PAYMENTINFO_0_PAYMENTSTATUS'],
+                    'tipo_pago'=>$response['PAYMENTINFO_0_CURRENCYCODE'],
+                    'contabilizador_paypal'=>$data['invoice_id'],
+
+                );
+                if(Voucher::insert($list_facturas)){
+                    $data=array(
+                        'name' => "Cryptoperu",
+                    );
+
+                    Mail::send('generacions_pdf',['list_facturas'=>$list_facturas,'nombres'=>Auth::user()['name']],function($message) use ($correo){
+                        $message->from($correo,'Cryptoperu');
+                        $message->to($correo)->subject('Comprobande Cryptoperu');
+                    });
+
+                    Flash::success("!Se ha realizado la transacción de forma exitosa, revisa tu correo!");
+                    return view('home');
+                }else{
+                    Flash::danger("!Sucedió un inconveniente por favor intentarlo nuevamente!");
+                    return view('home');
+                }
+
+
     }
 }

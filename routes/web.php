@@ -94,6 +94,18 @@ Route::get('/redirectT', 'SocialController@redirectTwitter');
 Route::get('/callbackT', 'SocialController@callbackTwitter');
 Route::get('/redirectG', 'SocialController@redirectGoogle');
 Route::get('/callbackG', 'SocialController@callbackGoogle');
-Route::get('/pay-with-paypal', 'HomeController@payWithPaypal')->name('payment.paypal');
+Route::get('/editar-datos-personales/{codigo}', 'HomeController@editarDatos')->name('payment.editar');
+Route::put('/cambiar-datos-personales/{codigo}', 'HomeController@cambiar')->name('payment.update');
+Route::get('/pay-with-paypal/{precio}/{detalle}/{cantidad}', 'HomeController@payWithPaypal')->name('payment.paypal');
 Route::get('/paypal-success', 'HomeController@paypalSuccess')->name('payment.paypalSuccess');
+Route::put('/generar-comprobante/{user}', 'HomeController@generarPdf')->name('payment.pdf');
+Route::get('sendemail',function(){
+    $data=array(
+        'name' => "Curso Laravel",
+    );
+    Mail::send('emails.welcome',$data,function($message){
+        $message->from('marcodiazzavala@gmail.com','Curso Laravel');
+        $message->to('susoconde@gmail.com')->subject('Test email');
+    });
+});
 

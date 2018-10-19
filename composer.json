@@ -6,15 +6,19 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "barryvdh/laravel-dompdf": "^0.8.3",
         "cviebrock/eloquent-sluggable": "4.3",
+        "darryldecode/cart": "~4.0",
         "fideloper/proxy": "~3.3",
+        "gloudemans/shoppingcart": "^2.5",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.1",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.5",
         "socialiteproviders/twitter": "^3.0",
-        "srmklive/paypal": "~1.0"
+        "srmklive/paypal": "~1.0",
+        "tightenco/ziggy": "v0.6.8.1"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

@@ -1,4 +1,5 @@
 @extends('layouts.app') @section('title','Comprar') @section('content')
+
 <form name="form-pago" id="form-pago">
 <div class='form-group'>
     {!! Form::label('type','Tipo:') !!}
@@ -12,12 +13,11 @@
     </div>
     <div class='form-group'>
     {!! Form::label('cantidad','Ingresar cantidad a comprar:') !!}
+        <font color="red"><b>Cantidad mínima de compra permitida debe superar el valor de $50</b></font>
         <input type='text' class="form-control" name="cantidad" id='cantidad'>
     </div>
-    <!--
-    <div class='form-group'>
-        <button type="button"  name="btncalcular" id="btncalcular" class="btn btn-primary mb-2"><i class="fa fa-refresh"></i> Calcular</button>
-    </div>-->
+
+
     <div id="actualizar">
         <div class='form-group'>
         {!! Form::label('soles','Depositar en soles:') !!}
@@ -38,15 +38,32 @@
 <div class='form-group' id="pasarela-pago" style="display: none;">
         <div class='form-group '>
         <div class='form-group'>
-        {!! Form::label('cantidad','Ingresar wallet:') !!}
-            <input type='text' class="form-control" name="wallet" placeholder="Wallet" id='wallet'>
+        {!! Form::label('cantidad','Wallet:') !!}
+            <input type='text' class="form-control" name="wallet" placeholder="Ingresar wallet" id='wallet' {!!$wallet['readonly']!!} value="{{$wallet['valor']}}">
         </div>
-        <a  name="btnpaypal" href="{{ route('payment.paypal')}}" id="btnpaypal" class="btn btn-primary btn-lg btn-block"><i class="fa fa-paypal"></i> Paga con PayPal</a>
+        <a  name="btnpaypal" href="javascript:" id="btnpaypal" class="btn btn-primary btn-lg btn-block"><i class="fa fa-paypal"></i> Paga con PayPal</a>
         <a  name="btnculqi"  id="btnculqi" class="btn btn-primary btn-lg btn-block"><i class="fa fa-dollar"></i> Paga con Culqi</a>
     </div>
 </div>
 </form>
-<script>
+@routes
+<script type="text/javascript">
+        $("#btnpaypal").click(function(){
+        var valor=$("#dolares").val() ;
+        var cantidad=$("#cantidad").val() ;
+        var codigo=$("#codigo").val() ;
+        var moneda=$( "#cripto option:selected" ).text();
+        var wallet = $("#wallet").val();
+        if(wallet==''){
+            alert("Wallet * de caracter obligatorio"); return;
+        }
+
+            var url = route('payment.paypal',[valor.substring(2),moneda,cantidad]);
+            window.location.href =url;
+
+
+
+        });
 
         $("#cantidad").keyup(function(){
             $("#pasarela-pago").hide();
@@ -122,8 +139,6 @@
         });
 
         $("#btncomprar").click(function(){
-
-
             $("#pasarela-pago").show();
         });
 
