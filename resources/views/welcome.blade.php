@@ -48,6 +48,29 @@
 </form>
 @routes
 <script type="text/javascript">
+        $("#cripto").change(function(){
+        $("#cantidad").val(1);
+        $.ajax({
+            url: "https://api.coinbase.com/v2/prices/spot?currency=USD",
+            success: function (data) {
+            $("#dolares").val(data.data.amount);
+            alert(amounts)
+            },
+            error: function(){
+            alert("Problemas con los servicios de coinbase");
+            }
+        });
+        $.ajax({
+            url: "https://api.coinbase.com/v2/prices/spot?currency=PEN",
+            success: function (data) {
+            $("#soles").val(data.data.amount);
+            },
+            error: function(){
+            alert("Problemas con los servicios de coinbase");
+            }
+        });
+
+        });
         $("#btnpaypal").click(function(){
         var valor=$("#dolares").val() ;
         var cantidad=$("#cantidad").val() ;

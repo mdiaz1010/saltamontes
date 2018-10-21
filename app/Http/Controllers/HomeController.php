@@ -150,6 +150,7 @@ class HomeController extends Controller
                 $token= $request->token;
                 $prayerId= $request->PayerID;
                 $response = $provider->getExpressCheckoutDetails($token);
+
                 $response = $provider->doExpressCheckoutPayment($data,$token,$prayerId);
                 $value = Auth::user();
 
@@ -183,7 +184,7 @@ class HomeController extends Controller
 
                     Mail::send('generacions_pdf',['list_facturas'=>$list_facturas,'nombres'=>Auth::user()['name']],function($message) use ($correo){
                         $message->from($correo,'Cryptoperu');
-                        $message->to($correo)->subject('Comprobande Cryptoperu');
+                        $message->to($correo)->subject('Comprobante Cryptoperu');
                     });
 
                     Flash::success("!Se ha realizado la transacción de forma exitosa, revisa tu correo!");
