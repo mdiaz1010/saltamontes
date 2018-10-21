@@ -14,7 +14,7 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    protected $redirectTo = '';
+    protected $redirectTo = 'home';
     public function redirectFacebook()
     {
 

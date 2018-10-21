@@ -14,7 +14,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['auth.dashboard','vistas.article'],'App\Http\ViewComposer\AsideComposer');
+        View::composer(['auth.dashboard','vistas.home'],'App\Http\ViewComposer\AsideComposer');
     }
 
     /**

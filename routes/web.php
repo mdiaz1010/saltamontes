@@ -15,7 +15,7 @@
 
 Route::get('/', [
     'as'=>'front.index',
-    'uses'=>'FrontController@index'
+    'uses'=>'HomeController@index'
 ]);
 
 Route::get('categories/{name}',[
