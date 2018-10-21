@@ -101,10 +101,10 @@ Route::get('/paypal-success', 'HomeController@paypalSuccess')->name('payment.pay
 Route::put('/generar-comprobante/{user}', 'HomeController@generarPdf')->name('payment.pdf');
 Route::get('sendemail',function(){
     $data=array(
-        'name' => "Curso Laravel",
+        'name' => "Laravel",
     );
     Mail::send('emails.welcome',$data,function($message){
-        $message->from('marcodiazzavala@gmail.com','Curso Laravel');
+        $message->from('marcodiazzavala@gmail.com','Test');
         $message->to('susoconde@gmail.com')->subject('Test email');
     });
 });
